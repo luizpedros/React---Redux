@@ -26,7 +26,10 @@ function counterReducer(state=0, action){
 //3º Criar store para passar o status daa ação para Store amazenar esse status da ação
 
 const store = createStore(counterReducer);
+console.log(store.getState()) //antes de imcrementar
 
-store.subscribe(()=>{console.log(store.getState())})
+store.subscribe(()=>{console.log(store.getState())}); //depois
+
+store.dispatch(incrementAction);
 
 
